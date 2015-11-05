@@ -3,6 +3,7 @@ Feature: index
     Given I am at the main page
     Then I should see the message 'Bienvenido'
     And I should see a button with id 'play'
+    And I should see an image with id 'logo'
 
   Scenario: I start the game
     Given I am at the main page

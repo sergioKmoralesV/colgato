@@ -17,3 +17,7 @@ end
 Then (/^I should be at the game page with message '(.*)'$/)  do |text|
   last_response.body.should =~ /#{text}/m
 end
+
+Then(/^I should see an image with id '(.*?)'$/) do |img|
+  last_response.should have_xpath("//img[@id=\"#{img}\"]")
+end
