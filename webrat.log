@@ -33,3 +33,9 @@ D, [2015-11-05T01:35:52.766921 #3905] DEBUG -- : REQUESTING PAGE: GET /play with
 D, [2015-11-05T01:35:52.768024 #3905] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/play"}
 D, [2015-11-05T01:35:52.769876 #3905] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
 D, [2015-11-05T01:35:52.772046 #3905] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+D, [2015-11-05T01:40:29.426898 #4471] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T01:40:29.472327 #4471] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T01:40:29.474107 #4471] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-05T01:40:29.475206 #4471] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/play"}
+D, [2015-11-05T01:40:29.477104 #4471] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
+D, [2015-11-05T01:40:29.479379 #4471] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
