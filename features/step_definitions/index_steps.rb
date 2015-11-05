@@ -14,6 +14,6 @@ When /^I press the button with id '(.*)'$/ do |name|
   click_link(name)
 end
 
-Then (/^I should be at the game page$/)  do
-  visit '/play'
+Then (/^I should be at the game page with message '(.*)'$/)  do |text|
+  last_response.body.should =~ /#{text}/m
 end

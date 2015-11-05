@@ -7,4 +7,4 @@ Feature: index
   Scenario: I start the game
     Given I am at the main page
     When I press the button with id 'play'
-    Then I should be at the game page
+    Then I should be at the game page with message 'Adivina la palabra'

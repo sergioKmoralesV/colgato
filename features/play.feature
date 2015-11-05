@@ -1,8 +1,7 @@
-Feature: play 
-	Scenario: 
+Feature: play
+	Scenario:
 		Given I am in the play page
 		When I input "g" in the textarea "letter"
-		And press the button "try"
+		And press the button "Inténtalo!"
 		Then I should see "g"
-		And I should see "Guess the word"
-		
+		And I should see "Adivina la palabra!"
