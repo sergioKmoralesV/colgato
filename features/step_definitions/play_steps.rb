@@ -14,3 +14,7 @@ Then(/^should see "(.*?)"$/) do |letter|
   last_response.body.should =~ /#{letter}/m
 end
 
+And(/^should see "(.*?)"$/) do |label|
+  last_response.body.should =~ /#{label}/m
+end
+
