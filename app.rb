@@ -1,5 +1,5 @@
 require 'sinatra'
-@@real_word = Array.new
+
 
 get '/' do
   erb :index
@@ -14,23 +14,21 @@ end
 
 post '/play' do
 
-	@word="gatuno"
+	@guess = Array.new
+	@real_word = Array.new
+	@word="g a t u n o"
+	@real_word=@word.split(" ")
+	@size=@real_word.size-1
 
-@word.split(//).each {|c|
-      @@real_word.push(c)
-
-
-}
 
 
 	@letter = params[:letter]
-	@size=@@real_word.size
 	
 	for counter in 0..@size
-	 if @letter==@@real_word[counter]
-    		puts 1
-    	end
+	 @guess.push("_")
+	 
 	end
+
 	
 	erb :play
 end
