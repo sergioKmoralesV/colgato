@@ -7,15 +7,11 @@ end
 
 
 get '/play' do
-	
-	
-	erb :play  
+	erb :play
 end
+
 post '/play' do
 	@word="gatuno"
 	@letter = params[:letter]
 	erb :play
-  
 end
-
-
