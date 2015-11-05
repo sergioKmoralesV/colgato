@@ -1,5 +1,5 @@
-Given(/^I am in the play page $/) do
-  visit '/'
+Given(/^I am in the play page$/) do
+  visit '/play'
 end
 
 When(/^I input "(.*?)" in the textarea "(.*?)"$/) do |value, textarea|
@@ -17,4 +17,3 @@ end
 And(/^should see "(.*?)"$/) do |label|
   last_response.body.should =~ /#{label}/m
 end
-
