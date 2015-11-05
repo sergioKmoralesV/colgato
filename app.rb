@@ -7,9 +7,11 @@ end
 
 
 get '/play' do
-		
+
 	erb :play  
+
 end
+
 post '/play' do
 
 	@word="gatuno"
@@ -31,7 +33,4 @@ post '/play' do
 	end
 	
 	erb :play
-  
 end
-
-
