@@ -59,6 +59,7 @@ D, [2015-11-05T07:33:11.130081 #3299] DEBUG -- : REQUESTING PAGE: GET / with {} 
 D, [2015-11-05T07:33:11.131900 #3299] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
 D, [2015-11-05T07:33:11.134281 #3299] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
 D, [2015-11-05T07:33:11.136526 #3299] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+<<<<<<< HEAD
 D, [2015-11-05T12:36:56.561610 #2108] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
 D, [2015-11-05T12:36:57.508472 #2108] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
 D, [2015-11-05T12:36:57.527478 #2108] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
@@ -69,3 +70,20 @@ D, [2015-11-05T12:41:33.150520 #12900] DEBUG -- : REQUESTING PAGE: GET / with {}
 D, [2015-11-05T12:41:33.156522 #12900] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
 D, [2015-11-05T12:41:33.167532 #12900] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
 D, [2015-11-05T12:41:33.175537 #12900] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+=======
+D, [2015-11-05T07:42:43.746908 #4514] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T07:42:43.788834 #4514] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T07:42:43.790970 #4514] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-05T07:42:43.793280 #4514] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
+D, [2015-11-05T07:42:43.795758 #4514] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+D, [2015-11-05T07:46:54.638168 #5093] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T07:46:54.684252 #5093] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T07:46:54.686113 #5093] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-05T07:46:54.688606 #5093] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
+D, [2015-11-05T07:46:54.691058 #5093] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+D, [2015-11-05T08:00:19.020839 #6850] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T08:00:19.064892 #6850] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-05T08:00:19.067100 #6850] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-05T08:00:19.069748 #6850] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
+D, [2015-11-05T08:00:19.072865 #6850] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+>>>>>>> 52b8d82f6498a2643908f79724c053fb1b8c6202
