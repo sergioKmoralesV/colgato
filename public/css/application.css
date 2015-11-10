@@ -2332,13 +2332,23 @@
      width: 75%;
      overflow: scroll;
      background: #D0E2F0;
+     border: 1px solid #000;
  }
 
  .square-box{
-     position: relative;
-     width: 100%;
-     overflow: scroll;
+     vertical-align: middle;
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 80%;
+     overflow: hidden;
      background: #D0E2F0;
+     margin-left: 10%;
+     margin-right: 10%;
+     margin-top: 10%;
+     margin-bottom: 10%;
  }
  .square-box:before{
      content: "";
@@ -2346,7 +2356,7 @@
      padding-top: 100%;
  }
  .square-content{
-     position:  absolute;
+     position:absolute;
      top: 0;
      left: 0;
      bottom: 0;
