@@ -6,16 +6,13 @@
 <br>
 <br>
 <br>
-
-
-
-<h1> <%=  @letter%></h1>
-
+<h1> <%=$letter%></h1>
 <br>
-
-
-
-<h1><%=  $guess%></h1>
+<h1>
+  <%$guess.each do |letter|%>
+    <%=letter%>
+  <%end%>
+</h1>
 <form name="play" action="/play" method="post">
   <input name="letter" type="text">
   <input type="submit" value="Inténtalo!">
