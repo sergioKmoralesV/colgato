@@ -1,34 +1,31 @@
 require 'sinatra'
-$guess = Array.new
-$word="g a t u n o"
-$real_word=$word.split(" ");
 
+$guess= Array.new
+$word = "gatuno".split('')
 
 get '/' do
 	$guess = Array.new
-	@word_size=$real_word.count
-for i in 0..@word_size-1
-   $guess.push("_")
-end
-  
+	$word.each {$guess.push('_')}
   erb :index
-
 end
 
 
 get '/play' do
-	
 	erb :play
-
-
 end
 
 post '/play' do
-	
-	@letter= params[:letter]
-	if $real_word.include?(@letter)
-		$guess[$real_word.index(@letter)]=@letter
-		
+	$letter = params[:letter]
+	if $word.include?($letter)
+		(0..($word.size-1)).each {|x| $guess[x]=$letter unless $word[x]!=$letter}
 	end
 	erb :play
+end
+
+get '/win' do
+	erb :win
+end
+
+get '/fail' do
+	erb :fail
 end
