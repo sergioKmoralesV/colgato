@@ -4,8 +4,15 @@ $guess= Array.new
 $word = "gatuno".split('')
 $trials=0
 $image=''
+$new_word="hh"
+# crea un nuevo archivo y escribe
+
+	
+
+
 
 get '/' do
+	
 	$guess = Array.new
 	$word.each {$guess.push('_')}
 	$trials=0
@@ -38,5 +45,15 @@ get '/fail' do
 end
 
 get '/createword' do
+
+	erb :createword
+end
+
+post '/createword' do
+$new_word = params[:new_letter]
+	
+	File.open('text.txt', 'a') do |f|
+  f.puts $new_word
+end
 	erb :createword
 end
