@@ -36,3 +36,7 @@ end
 get '/fail' do
 	erb :fail
 end
+
+get '/createword' do
+	erb :createword
+end

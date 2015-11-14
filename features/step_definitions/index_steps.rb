@@ -21,3 +21,8 @@ end
 Then(/^I should see an image with id '(.*?)'$/) do |img|
   last_response.should have_xpath("//img[@id=\"#{img}\"]")
 end
+
+Then (/^I should be at the createword page with message '(.*)'$/)  do |text2|
+  last_response.body.should =~ /#{text2}/m
+end
+
