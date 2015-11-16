@@ -4,17 +4,11 @@ $guess= Array.new
 $word = "gatuno".split('')
 $trials=0
 $image=''
-<<<<<<< HEAD
 $letter=''
-=======
 $new_word=""
 $list_words=Array.new
 
-
->>>>>>> 56e92f57075ea6fab2e8ae0a51501712e9523031
-
 get '/' do
-	
 	$guess = Array.new
 	$word.each {$guess.push('_')}
 	$trials=0
@@ -36,6 +30,8 @@ post '/play' do
 		$trials+=1
 		$image="<img id='logo' src='/images/intento"+$trials.to_s+".png'>"
 	end
+	redirect '/fail' unless $trials!=6
+	redirect '/win' unless $guess.include?('_')
 	erb :play
 end
 
@@ -54,7 +50,6 @@ end
 
 post '/createword' do
 $new_word = params[:new_letter]
-	
 	File.open('text.txt', 'a') do |f|
   		f.puts $new_word
 	end
