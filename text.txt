@@ -1,10 +1,10 @@
-
-prueba
-prueba2
-eri, mira
-
 gato
 perro
-hola
-perro
-gato
+cabeza
+animal
+caballo
+computador
+procesador
+persona
+varita
+capucha

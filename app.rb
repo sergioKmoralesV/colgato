@@ -1,37 +1,33 @@
 require 'sinatra'
+require './lib/game'
 
-$guess= Array.new
-$word = "gatuno".split('')
-$trials=0
+$juego = Game.new
 $image=''
 $letter=''
-$new_word=""
-$list_words=Array.new
 
 get '/' do
-	$guess = Array.new
-	$word.each {$guess.push('_')}
-	$trials=0
+	$juego =Game.new
+	$juego.start
 	$letter=''
   erb :index
 end
 
 
 get '/play' do
-	$image="<img id='logo' src='/images/intento"+$trials.to_s+".png' >"
+	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png' >"
 	erb :play
 end
 
 post '/play' do
 	$letter = params[:letter]
-	if $word.include?($letter)
-		(0..($word.size-1)).each {|x| $guess[x]=$letter unless $word[x]!=$letter}
+	if $juego.word.include?($letter)
+		(0..($juego.word.size-1)).each {|x| $juego.guess[x]=$letter unless $juego.word[x]!=$letter}
 	else
-		$trials+=1
-		$image="<img id='logo' src='/images/intento"+$trials.to_s+".png'>"
+		$juego.trials+=1
+		$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>"
 	end
-	redirect '/fail' unless $trials!=6
-	redirect '/win' unless $guess.include?('_')
+	redirect '/fail' unless $juego.trials!=6
+	redirect '/win' unless $juego.guess.include?('_')
 	erb :play
 end
 
@@ -50,17 +46,10 @@ end
 
 post '/createword' do
 $new_word = params[:new_letter]
-	File.open('text.txt', 'a') do |f|
-  		f.puts $new_word
-	end
+$juego.new_word($new_word)
 	erb :createword
 end
 get '/list' do
-	$list_words=Array.new
-	f = File.open("text.txt", "r")
-	f.each_line do |line|
-	  $list_words.push(line)
-	end
-	f.close
- erb :list
+	$list_words=$juego.get_words_from_file
+	erb :list
 end
