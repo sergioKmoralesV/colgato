@@ -643,3 +643,17 @@ D, [2015-11-15T06:01:21.367204 #824] DEBUG -- : REQUESTING PAGE: GET /list with 
 D, [2015-11-15T06:01:21.433249 #824] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
 D, [2015-11-15T06:01:21.439253 #824] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
 D, [2015-11-15T06:01:21.450259 #824] DEBUG -- : REQUESTING PAGE: GET /win with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.490307 #546] DEBUG -- : REQUESTING PAGE: GET /createword with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.564607 #546] DEBUG -- : REQUESTING PAGE: POST /createword with {"new_letter"=>"gato"} and HTTP headers {"HTTP_REFERER"=>"/createword"}
+D, [2015-11-16T17:33:36.571776 #546] DEBUG -- : REQUESTING PAGE: GET /fail with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.587027 #546] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.593442 #546] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.597083 #546] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-16T17:33:36.600196 #546] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.602425 #546] DEBUG -- : REQUESTING PAGE: GET /createword with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-16T17:33:36.604999 #546] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.607343 #546] DEBUG -- : REQUESTING PAGE: GET /list with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-16T17:33:36.613341 #546] DEBUG -- : REQUESTING PAGE: GET /list with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.658464 #546] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
+D, [2015-11-16T17:33:36.661419 #546] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+D, [2015-11-16T17:33:36.666632 #546] DEBUG -- : REQUESTING PAGE: GET /win with {} and HTTP headers {}
