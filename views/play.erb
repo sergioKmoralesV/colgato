@@ -1,11 +1,8 @@
-<html>
-<body>
 <center>
-
-<h1>Adivina la palabra!</h1>
-<%=$image%>
-<h1> <%=$letter%></h1>
 <h1>
+  Adivina la palabra!<br>
+  <%=$image%><br>
+  <%=$letter%><br>
   <%$guess.each do |letter|%>
     <%=letter%>
   <%end%>
@@ -13,8 +10,5 @@
 <form name="play" action="/play" method="post">
   <input name="letter" type="text">
   <input type="submit" value="Inténtalo!">
-
 </form>
 </center>
-</body>
-</html>
