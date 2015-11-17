@@ -25,7 +25,7 @@ describe Game do
 
  it 'adds existing word' do
    @juego.get_words_from_file
-   @juego.new_word('gato')
+   @juego.new_word(@juego.words.first)
    expect(@juego.exists).to eq true
  end
 end
