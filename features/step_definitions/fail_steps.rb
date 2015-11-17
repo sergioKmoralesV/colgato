@@ -19,9 +19,5 @@ And(/^I should see one button with id '(.*?)'$/) do |button|
 end
 
 When(/^I make (\d+) mistakes$/) do |error|
-  (0..5).each do
-    fill_in("letter", :with => "x")
-    click_button("Inténtalo!")
-  end
-  visit '/play'
+  
 end

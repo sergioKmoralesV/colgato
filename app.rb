@@ -21,8 +21,8 @@ end
 post '/play' do
 	$letter = params[:letter]
 	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify_letter($letter)==true
-	redirect '/fail' unless $juego.trials!=6
-	redirect '/win' unless $juego.guess.include?('_')
+	redirect :fail unless $juego.trials!=6
+	redirect :win unless $juego.guess.include?('_')
 	erb :play
 end
 
@@ -45,7 +45,6 @@ post '/createword' do
 		$new_word="Ya existe"
 	else
 		$new_word = params[:new_letter]
-
 	end
 	erb :createword
 end
@@ -59,5 +58,5 @@ end
 post '/delete' do
 	$deleted = params[:val]
 	$juego.delete($deleted)
-	redirect '/list'
+	redirect :list
 end
