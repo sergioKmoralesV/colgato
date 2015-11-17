@@ -21,7 +21,7 @@ end
 
 When(/^I guess a correct letter$/) do
   fill_in("letter", :with => $juego.word.first)
-  click_button("Inténtalo!")
+  click_button("play")
 end
 
 Then(/^I should see the letter$/) do
