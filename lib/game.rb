@@ -1,10 +1,11 @@
 class Game
-  attr_accessor :guess, :word, :trials, :words
+  attr_accessor :guess, :word, :trials, :words, :exists
   def initialize
     @guess=Array.new
     @word
     @trials=0
     @words=Array.new
+    @exists= false
   end
   def start
     @trials=0
@@ -21,8 +22,13 @@ class Game
   	f.close
   end
   def new_word(word)
+    @exists= false
     File.open('text.txt', 'a') do |f|
-    		f.puts word
+      if ! @words.include?(word)
+        f.puts word
+      else
+         @exists= true
+      end    		
   	end
   end
 end
