@@ -15,11 +15,6 @@ Then(/^I should see the word "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see the word "([^"]*)" in the label with id "([^"]*)"$/)do |value_message, textarea_message|
-  fill_in(textarea_message, :with => value_message)
+  last_response.should have_xpath("//label[@id=\"#{textarea_message}\"]")
+  last_response.body.should =~ /#{value_message}/m
 end
-
-		
-
-
-
-		

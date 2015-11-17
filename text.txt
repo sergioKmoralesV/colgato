@@ -9,3 +9,7 @@ persona
 varita
 capucha
 loba
+gato
+gato
+gato
+gato
