@@ -20,12 +20,7 @@ end
 
 post '/play' do
 	$letter = params[:letter]
-	if $juego.word.include?($letter)
-		(0..($juego.word.size-1)).each {|x| $juego.guess[x]=$letter unless $juego.word[x]!=$letter}
-	else
-		$juego.trials+=1
-		$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>"
-	end
+	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify_letter($letter)==true
 	redirect '/fail' unless $juego.trials!=6
 	redirect '/win' unless $juego.guess.include?('_')
 	erb :play

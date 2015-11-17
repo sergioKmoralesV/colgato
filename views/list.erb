@@ -1,17 +1,18 @@
 
 <h1>Lista de palabras</h1>
 
-<div class='container-fluid' style='margin-left:20%; margin-right:20%;'>
-	<center>
 <table>
 	<ul id='words'>
 	<%$list_words.each do |word|%>
 	    <tr>
 				<td><%=word%></td>
-				<td> <input id = "edit" type="submit" value="Editar"></td>
+				<td>
+						<form id="edit" action="/edit" method="post">
+							 <input id = "edit" type="submit" value="Editar">
+						</form>
+				</td>
 				<td>
 					<form id="delete" action="/delete" method="post">
-
 						<%="<input type='hidden' name='val' value="+word+">"%>
 						<input type="submit" value="Borrar">
 					</form>
@@ -20,5 +21,3 @@
 	  <%end%>
 	</ul>
 </table>
-</center>
-</div>

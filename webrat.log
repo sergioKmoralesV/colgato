@@ -713,3 +713,17 @@ D, [2015-11-16T22:28:45.130639 #3835] DEBUG -- : REQUESTING PAGE: GET /list with
 D, [2015-11-16T22:28:45.134867 #3835] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
 D, [2015-11-16T22:28:45.137493 #3835] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
 D, [2015-11-16T22:28:45.140406 #3835] DEBUG -- : REQUESTING PAGE: GET /win with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.893701 #14746] DEBUG -- : REQUESTING PAGE: GET /createword with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.942170 #14746] DEBUG -- : REQUESTING PAGE: POST /createword with {"new_letter"=>"gato"} and HTTP headers {"HTTP_REFERER"=>"/createword"}
+D, [2015-11-17T01:47:25.951902 #14746] DEBUG -- : REQUESTING PAGE: GET /fail with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.957810 #14746] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.963126 #14746] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.965545 #14746] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-17T01:47:25.968061 #14746] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.969983 #14746] DEBUG -- : REQUESTING PAGE: GET /createword with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-17T01:47:25.972475 #14746] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.974457 #14746] DEBUG -- : REQUESTING PAGE: GET /list with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2015-11-17T01:47:25.977400 #14746] DEBUG -- : REQUESTING PAGE: GET /list with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.981778 #14746] DEBUG -- : REQUESTING PAGE: GET /play with {} and HTTP headers {}
+D, [2015-11-17T01:47:25.984741 #14746] DEBUG -- : REQUESTING PAGE: POST /play with {"letter"=>"g"} and HTTP headers {"HTTP_REFERER"=>"/play"}
+D, [2015-11-17T01:47:25.988062 #14746] DEBUG -- : REQUESTING PAGE: GET /win with {} and HTTP headers {}

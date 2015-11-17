@@ -30,13 +30,20 @@ class Game
          @exists= true
       end
   	end
-    f.close
   end
   def delete(word)
     @words.delete(word)
     f=File.open('text.txt', 'w')
     @words.each { |word| f.puts word}
     f.close
-
+  end
+  def verify_letter(letter)
+    if @word.include?(letter)
+      (0..(@word.size-1)).each {|x| @guess[x]=letter unless @word[x]!=letter}
+      return true
+    else
+      @trials+=1
+      return false
+    end
   end
 end
