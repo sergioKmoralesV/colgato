@@ -28,8 +28,15 @@ class Game
         f.puts word
       else
          @exists= true
-      end    		
+      end
   	end
+    f.close
   end
+  def delete(word)
+    @words.delete(word)
+    f=File.open('text.txt', 'w')
+    @words.each { |word| f.puts word}
+    f.close
 
+  end
 end

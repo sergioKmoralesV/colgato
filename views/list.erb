@@ -6,7 +6,17 @@
 <table>
 	<ul id='words'>
 	<%$list_words.each do |word|%>
-	    <tr><td><%=word%></td><td> <input id = "edit" type="submit" value="Editar"></td><td><input id='delete' type='submit' action ='/delete'>Borrar</button></td></tr>
+	    <tr>
+				<td><%=word%></td>
+				<td> <input id = "edit" type="submit" value="Editar"></td>
+				<td>
+					<form id="delete" action="/delete" method="post">
+
+						<%="<input type='hidden' name='val' value="+word+">"%>
+						<input type="submit" value="Borrar">
+					</form>
+				</td>
+			</tr>
 	  <%end%>
 	</ul>
 </table>
