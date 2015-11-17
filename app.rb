@@ -50,6 +50,7 @@ $juego.new_word($new_word)
 	erb :createword
 end
 get '/list' do
-	$list_words=$juego.get_words_from_file
+	$juego.get_words_from_file
+	$list_words=$juego.words
 	erb :list
 end

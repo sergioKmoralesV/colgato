@@ -13,6 +13,7 @@ class Game
     @word.each{@guess.push('_')}
   end
   def get_words_from_file
+    @words=Array.new
     f = File.open("text.txt", "r")
   	f.each_line do |line|
   	  @words.push(line.gsub(/\n/,''))
