@@ -1,20 +1,15 @@
 
 <h1>Lista de palabras</h1>
 
-<table>
+<table class='table table-striped'>
 	<ul id='words'>
 	<%$list_words.each do |word|%>
 	    <tr>
 				<td><%=word%></td>
 				<td>
-						<form id="edit" action="/edit" method="post">
-							 <input id = "edit" type="submit" value="Editar">
-						</form>
-				</td>
-				<td>
 					<form id="delete" action="/delete" method="post">
 						<%="<input type='hidden' name='val' value="+word+">"%>
-						<input type="submit" value="Borrar">
+						<input class='btn btn-xs btn-danger' type="submit" value="Borrar">
 					</form>
 				</td>
 			</tr>

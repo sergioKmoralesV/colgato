@@ -35,7 +35,6 @@ get '/fail' do
 end
 
 get '/createword' do
-
 	erb :createword
 end
 
@@ -50,6 +49,7 @@ post '/createword' do
 	end
 	erb :createword
 end
+
 get '/list' do
 	$juego.get_words_from_file
 	$list_words=$juego.words
