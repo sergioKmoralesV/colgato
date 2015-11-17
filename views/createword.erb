@@ -4,10 +4,11 @@
 
 <h1>Crear palabra</h1>
 <label id= "word">
-<h1> <%=$new_word%></h1>
+  <h1> <%=$new_word%></h1>
+
 </label>
 <form name="createword" action="/createword" method="post">
-  <input name="new_letter" type="text">
+  <input name="new_letter" type="text" required>
   <input id = "create" type="submit" value="crear">
 
 </form>
@@ -16,3 +17,5 @@
 </html>
 
 		
+
+

@@ -1,6 +1,13 @@
+
 <h1>Lista de palabras</h1>
-<ul id='words'>
-<%$list_words.each do |word|%>
-    <%=word%><br>
-  <%end%>
-</ul>
+<div class='container-fluid' style='margin-left:20%; margin-right:20%;'>
+	<center>
+<table>
+	<ul id='words'>
+	<%$list_words.each do |word|%>
+	    <tr><td><%=word%></td><td> <input id = "edit" type="submit" value="Editar"></td></tr>
+	  <%end%>
+	</ul>
+</table>
+</center>
+</div>
