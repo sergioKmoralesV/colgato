@@ -25,4 +25,5 @@ class Game
     		f.puts word
   	end
   end
+
 end

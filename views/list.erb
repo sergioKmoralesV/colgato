@@ -1,6 +1,7 @@
 <h1>Lista de palabras</h1>
 <ul id='words'>
 <%$list_words.each do |word|%>
-    <%=word%><br>
+    <%=word%>
+    <input id='delete' type='submit' action ='/delete'>Borrar</button>
   <%end%>
 </ul>
