@@ -60,3 +60,10 @@ get '/list' do
 	$list_words=$juego.words
 	erb :list
 end
+
+post '/delete' do
+	$deleted = params[:delete]
+	$juego.borrar($deleted)
+	erb :list
+end
+

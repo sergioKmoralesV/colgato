@@ -1,11 +1,12 @@
 
 <h1>Lista de palabras</h1>
+
 <div class='container-fluid' style='margin-left:20%; margin-right:20%;'>
 	<center>
 <table>
 	<ul id='words'>
 	<%$list_words.each do |word|%>
-	    <tr><td><%=word%></td><td> <input id = "edit" type="submit" value="Editar"></td></tr>
+	    <tr><td><%=word%></td><td> <input id = "edit" type="submit" value="Editar"></td><td><input id='delete' type='submit' action ='/delete'>Borrar</button></td></tr>
 	  <%end%>
 	</ul>
 </table>
