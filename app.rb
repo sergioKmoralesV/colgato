@@ -45,8 +45,14 @@ get '/createword' do
 end
 
 post '/createword' do
-$new_word = params[:new_letter]
-$juego.new_word($new_word)
+	$new_word = params[:new_letter]
+	$juego.new_word($new_word)
+	if $juego.exists 
+		$new_word="Ya existe"
+	else
+		$new_word = params[:new_letter]
+		
+	end
 	erb :createword
 end
 get '/list' do
