@@ -7,6 +7,7 @@ Then(/^I should see the phrase '(.*)'$/) do |text|
 end
 
 Then /^I should see a question "(.*)"$/ do |text|
+save_and_open_page
   last_response.body.should =~ /#{text}/m
 end
 
@@ -19,5 +20,5 @@ And(/^I should see one button with id '(.*?)'$/) do |button|
 end
 
 When(/^I make (\d+) mistakes$/) do |error|
-  
+
 end

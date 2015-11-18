@@ -13,6 +13,7 @@ class Game
     @word=@words[rand(0..(@words.size-1))].split('')
     @word.each{@guess.push('_')}
   end
+
   def get_words_from_file
     @words=Array.new
     f = File.open("text.txt", "r")
@@ -21,6 +22,7 @@ class Game
   	end
   	f.close
   end
+
   def new_word(word)
     @exists= false
     File.open('text.txt', 'a') do |f|
@@ -32,6 +34,7 @@ class Game
   	end
     get_words_from_file
   end
+
   def delete(word)
     @words.delete(word)
     f=File.open('text.txt', 'w')
@@ -39,6 +42,7 @@ class Game
     f.close
     get_words_from_file
   end
+
   def verify_letter(letter)
     if @word.include?(letter)
       (0..(@word.size-1)).each {|x| @guess[x]=letter unless @word[x]!=letter}
