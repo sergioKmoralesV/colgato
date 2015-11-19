@@ -8,7 +8,6 @@ describe Game do
  it 'game starts with different values of global variables' do
    @juego.start
    expect(@juego.trials).to eq 0
-   expect(@juego.words.size).not_to eq 0
    expect(@juego.guess.include?(/\W/)).to eq false
  end
 
@@ -18,12 +17,6 @@ describe Game do
    expect(@juego.word.join).to eq "ave"
    expect(@juego.guess.include?(/\W/)).to eq false
  end
-
- it 'gets all the words from doc' do
-   @juego.get_words_from_file
-   expect(@juego.words.size).not_to eq 0
- end
-
 
  it 'verifies a correct letter' do
    @juego.start
