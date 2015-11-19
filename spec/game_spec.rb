@@ -26,9 +26,9 @@ describe Game do
 
  it 'adds new word' do
    @juego.get_words_from_file
-   @juego.new_word('pepito')
+   @juego.new_word('otorrinolaringología')
    expect(@juego.exists).to eq false
-   @juego.delete('pepito')
+   @juego.delete('otorrinolaringología')
  end
 
  it 'adds existing word' do
