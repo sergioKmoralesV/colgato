@@ -24,26 +24,6 @@ describe Game do
    expect(@juego.words.size).not_to eq 0
  end
 
- it 'adds new word' do
-   @juego.get_words_from_file
-   @juego.new_word('otorrinolaringología')
-   expect(@juego.exists).to eq false
-   @juego.delete('otorrinolaringología')
- end
-
- it 'adds existing word' do
-   @juego.get_words_from_file
-   @juego.new_word(@juego.words.first)
-   expect(@juego.exists).to eq true
- end
-
- it 'deletes a word' do
-   @juego.get_words_from_file
-   @word=@juego.words.first
-   @juego.delete(@juego.words.first)
-   expect(@juego.words.include?(@word)).to eq false
-   @juego.new_word(@word)
- end
 
  it 'verifies a correct letter' do
    @juego.start

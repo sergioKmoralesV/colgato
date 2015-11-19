@@ -13,7 +13,8 @@ class Game
   def start
     @trials=0
     get_words_from_file
-    @word=@words[rand(0..(@words.size-1))].split('')
+    admi= WordAdmin.new
+    @word= admi.get_word
     @word.each{@guess.push('_')}
   end
 
@@ -22,7 +23,7 @@ class Game
     @word=word.split('')
     @word.each{@guess.push('_')}
   end
-  
+
   def get_words_from_file
     @words=Array.new
     f = File.open("text.txt", "r")

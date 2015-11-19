@@ -40,23 +40,22 @@ end
 
 post '/createword' do
 	$new_word = params[:new_letter]
-	$juego.new_word($new_word)
-	if $juego.exists
-		$new_word="Ya existe"
-	else
-		$new_word = params[:new_letter]
-	end
+	$admin =  WordAdmin.new
+	$new_word=$admin.new_word($new_word)
 	erb :createword
 end
 
 get '/list' do
-	$juego.get_words_from_file
-	$list_words=$juego.words
+	$admin =  WordAdmin.new
+	$admin.get_words_from_file
+	$list_words=$admin.words
 	erb :list
 end
 
 post '/delete' do
 	$deleted = params[:val]
-	$juego.delete($deleted)
+	$admin =  WordAdmin.new
+	$admin.get_words_from_file
+	$admin.delete($deleted)
 	redirect :list
 end

@@ -1,8 +1,13 @@
-class Admin
+class WordAdmin
   attr_accessor :words, :exists
   def initialize
     @words=Array.new
-    @exists = false
+    get_words_from_file
+  end
+
+  def get_word
+    get_words_from_file
+    @words[rand(0..(@words.size-1))].split('')
   end
 
   def get_words_from_file
@@ -15,15 +20,17 @@ class Admin
   end
 
   def new_word(word)
-    @exists= false
+    @resp=''
     File.open('text.txt', 'a') do |f|
-      if ! @words.include?(word)
+      if !@words.include?(word)
         f.puts word
+        @resp = word
       else
-         @exists= true
+         @resp= "Ya existe"
       end
   	end
     get_words_from_file
+    @resp
   end
 
   def delete(word)
