@@ -1,3 +1,5 @@
+require './lib/admin.rb'
+
 class Game
   attr_accessor :guess, :word, :trials, :words, :exists
   def initialize
@@ -5,8 +7,9 @@ class Game
     @word
     @trials=0
     @words=Array.new
-    @exists= false
+    @exists = false
   end
+
   def start
     @trials=0
     get_words_from_file
@@ -14,13 +17,19 @@ class Game
     @word.each{@guess.push('_')}
   end
 
+  def start_with (word)
+    @trials = 0
+    @word=word.split('')
+    @word.each{@guess.push('_')}
+  end
+  
   def get_words_from_file
     @words=Array.new
     f = File.open("text.txt", "r")
-  	f.each_line do |line|
-  	  @words.push(line.gsub(/\n/,''))
-  	end
-  	f.close
+    f.each_line do |line|
+      @words.push(line.gsub(/\n/,''))
+    end
+    f.close
   end
 
   def new_word(word)
@@ -31,7 +40,7 @@ class Game
       else
          @exists= true
       end
-  	end
+    end
     get_words_from_file
   end
 

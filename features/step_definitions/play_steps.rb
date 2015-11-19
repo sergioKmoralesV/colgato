@@ -3,6 +3,11 @@ Given(/^I am in the play page$/) do
   visit '/play'
 end
 
+Given(/^I am in the play page starting with word "([^"]*)"$/) do |palabra|
+  $juego.start_with(palabra)
+  visit '/play'
+end
+
 When(/^I input "(.*?)" in the textarea "(.*?)"$/) do |value, textarea|
   fill_in(textarea, :with => value)
 end
@@ -34,6 +39,6 @@ Then(/^I should see the letter in the word$/) do
   end
 end
 
-Then(/^I should see a new part of the cat$/) do
-  last_response.should have_xpath("//img[@src=\"#{"/images/intento"+$juego.trials.to_s+".jpg"}\"]")
+Then(/^I should see a part of the cat$/) do
+  last_response.should have_xpath("//img[@src=\"#{"/images/intento"+$juego.trials.to_s+".png"}\"]")
 end

@@ -13,9 +13,8 @@ Feature: play
 		And I should see the letter in the word
 
 	Scenario: I enter a incorrect letter
-		Given I am in the play page
+		Given I am in the play page starting with word "ave"
 		When I input "x" in the textarea "letter"
 		And press the button "Inténtalo!"
 		Then I should see "x"
-
-	
+		And I should see a part of the cat

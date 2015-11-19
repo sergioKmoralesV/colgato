@@ -23,7 +23,7 @@ post '/play' do
 	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify_letter($letter)==true
 	redirect :fail unless $juego.trials!=6
 	redirect :win unless $juego.guess.include?('_')
-	erb :play
+	erb :play if $juego.trials<6
 end
 
 get '/win' do

@@ -12,6 +12,13 @@ describe Game do
    expect(@juego.guess.include?(/\W/)).to eq false
  end
 
+ it 'game starts with an specific word' do
+   @juego.start_with("ave")
+   expect(@juego.trials).to eq 0
+   expect(@juego.word.join).to eq "ave"
+   expect(@juego.guess.include?(/\W/)).to eq false
+ end
+
  it 'gets all the words from doc' do
    @juego.get_words_from_file
    expect(@juego.words.size).not_to eq 0
@@ -44,7 +51,7 @@ describe Game do
  end
 
  it 'verifies an incorrect letter' do
-   @juego.start
+   @juego.start_with("ave")
    expect(@juego.verify_letter("x")).to eq false
  end
 end
