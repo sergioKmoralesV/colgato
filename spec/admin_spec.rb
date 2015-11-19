@@ -13,7 +13,7 @@ describe WordAdmin do
   it 'adds new word' do
     @admin.get_words_from_file
     expect(@admin.new_word('otorrinolaringologia')).to eq 'otorrinolaringologia'
-    @admin.delete('otorrinolaringología')
+    @admin.delete('otorrinolaringologia')
   end
 
   it 'adds existing word' do
