@@ -1,4 +1,2 @@
-jirafa
-pepito
-pepinillo
 animal
+jirafa
