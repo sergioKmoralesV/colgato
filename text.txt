@@ -1,2 +1,12 @@
 animal
 jirafa
+elemento
+produccion
+vida
+cabeza
+perro
+tiburon
+reloj
+camisa
+zapato
+zapatilla
