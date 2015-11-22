@@ -1,5 +1,3 @@
-elemento
-produccion
 vida
 cabeza
 perro
@@ -10,3 +8,4 @@ zapato
 zapatilla
 animal
 jirafa
+produccion

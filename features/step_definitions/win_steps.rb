@@ -16,3 +16,4 @@ end
 And(/^I should see button with id '(.*?)'$/) do |button|
   last_response.should have_xpath("//button[@id=\"#{button}\"]")
 end
+
