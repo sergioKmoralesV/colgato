@@ -12,7 +12,7 @@ class WordAdmin
 
   def get_words_from_file
     @words=Array.new
-    f = File.open("text.txt", "r")
+    f = File.open("dictionary.txt", "r")
   	f.each_line do |line|
   	  @words.push(line.gsub(/\n/,''))
   	end
@@ -21,7 +21,7 @@ class WordAdmin
 
   def new_word(word)
     @resp=''
-    File.open('text.txt', 'a') do |f|
+    File.open('dictionary.txt', 'a') do |f|
       if !@words.include?(word)
         f.puts word
         @resp = word
@@ -35,7 +35,7 @@ class WordAdmin
 
   def delete(word)
     @words.delete(word)
-    f=File.open('text.txt', 'w')
+    f=File.open('dictionary.txt', 'w')
     @words.each { |word| f.puts word}
     f.close
     get_words_from_file
