@@ -2330,7 +2330,7 @@
  .square-box-image{
      position: relative;
      width: 75%;
-     overflow: scroll;
+     overflow: hidden;
      background: #fff;
      border: 1px solid #000;
  }
@@ -2345,7 +2345,7 @@
      bottom: 0;
      left: 0;
      width: 80%;
-     overflow: scroll;
+     overflow: hidden;
      background: #fff;
      margin-left: 10%;
      margin-right: 10%;

@@ -1,5 +1,3 @@
-animal
-jirafa
 elemento
 produccion
 vida
@@ -10,3 +8,5 @@ reloj
 camisa
 zapato
 zapatilla
+animal
+jirafa

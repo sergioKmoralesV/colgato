@@ -20,7 +20,7 @@ end
 
 post '/play' do
 	$letter = params[:letter]
-	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify_letter($letter)==true
+	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify_letter($letter)
 	if $juego.trials<6
 		if $juego.guess.include?('_')
 			erb :play
