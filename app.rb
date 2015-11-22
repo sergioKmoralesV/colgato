@@ -68,3 +68,14 @@ post '/delete' do
 	$admin.delete($deleted)
 	redirect :list
 end
+get '/register' do
+	erb :register
+end
+post '/register' do
+	$name=""
+	$name = params[:name]
+	erb :register
+end
+ 
+
+
