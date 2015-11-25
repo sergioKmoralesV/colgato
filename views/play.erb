@@ -1,5 +1,6 @@
-<body>
+<span style=' display:table-cell; vertical-align:middle;'>
   <center>
+    <img src='/images/logo_name.jpg' width='350px'>
   <h3>
     Adivina la palabra!<br><br>
     <%=$image%><br>
@@ -25,9 +26,24 @@
           <%end%>
     </div>
   </form>
-  </center>
-</body>
 
-<%if $clue%>
-  <div class="alert alert-info" role="alert"><h5>Pista: </h5><%=$clue%></div>
-<%end%>
+  <div class='container' style='width:70%'>
+    <div class='row'>
+      <%if $clue%>
+        <div class='col-xs-6'>
+          <div class="alert alert-info" role="alert" style='width:100%;'>
+              <h5>Pista: </h5><%=$clue%>
+          </div>
+        </div>
+        <div class='col-xs-6' >
+          <div class="alert alert-warning" role="alert" style='width:100%;'>
+      <%else%>
+        <div >
+          <div class="alert alert-warning" role="alert" style='width:100%;'>
+      <%end%>
+          <h5>Letras ingresadas:</h5>
+        </div>
+      </div>
+    </div>
+  </center>
+</span>
