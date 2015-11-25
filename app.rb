@@ -4,12 +4,14 @@ require './lib/game'
 $juego = Game.new
 $image=''
 $letter=''
+$name=''
 
 get '/' do
 	$juego =Game.new
 	$juego.start
 	$letter=''
 	$clue=nil
+	$name = ''
   erb :index
 end
 
@@ -76,11 +78,12 @@ post '/delete' do
 	$admin.delete($deleted)
 	redirect :list
 end
+
 get '/register' do
 	erb :register
 end
+
 post '/register' do
-	$name=""
-	$name = params[:name]
+	$name = params[:player_name]
 	erb :register
 end
