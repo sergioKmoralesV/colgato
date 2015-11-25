@@ -9,6 +9,7 @@ class Game
     @exists = false
     @available_clues=0
     @used_clues=0
+    @letters=Hash.new
   end
 
   def start
