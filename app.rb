@@ -9,6 +9,7 @@ get '/' do
 	$juego =Game.new
 	$juego.start
 	$letter=''
+	$clue=nil
   erb :index
 end
 
@@ -21,6 +22,7 @@ end
 post '/play' do
 	$letter = params[:letter]
 	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify_letter($letter)
+	$clue = nil
 	if $juego.trials<6
 		if $juego.guess.include?('_')
 			erb :play
@@ -30,9 +32,6 @@ post '/play' do
 	else
 		erb :fail
 	end
-	#redirect :fail unless $juego.trials!=6
-	#redirect :win unless $juego.guess.include?('_')
-	#erb :play if $juego.trials<6
 end
 
 get '/win' do
@@ -61,6 +60,15 @@ get '/list' do
 	erb :list
 end
 
+get '/clue' do
+	if $juego.unused_clues != 0
+		$clue = $juego.get_clue
+	else
+		$clue='Pistas agotadas'
+	end
+	erb :play
+end
+
 post '/delete' do
 	$deleted = params[:val]
 	$admin =  WordAdmin.new
@@ -76,6 +84,3 @@ post '/register' do
 	$name = params[:name]
 	erb :register
 end
- 
-
-

@@ -1,14 +1,33 @@
-<center>
-<h3>
-  Adivina la palabra!<br><br>
-  <%=$image%><br>
-  <%=$letter%><br>
-  <%$juego.guess.each do |letter|%>
-    <%=letter%>
-  <%end%>
-</h3>
-<form name="play" action="/play" method="post">
-  <input name="letter" type="text">
-  <input id='play' class='btn btn-sm'type="submit" value="Inténtalo!">
-</form>
-</center>
+<body>
+  <center>
+  <h3>
+    Adivina la palabra!<br><br>
+    <%=$image%><br>
+    <%=$letter%><br>
+    <%$juego.guess.each do |letter|%>
+      <%=letter%>
+    <%end%>
+  </h3>
+  <form name="play" action="/play" method="post">
+    <div class="input-group">
+        <input name="letter" type="text"><br><br>
+        <input id='play' class='btn btn-sm' type="submit" value="Inténtalo!">&nbsp;
+          <%if $juego.available_clues != 0%>
+              <a href="/clue">
+                <button id='clue' type="button" class="btn btn-primary btn-sm">
+                  Solicitar Pista
+                </button>
+              </a>
+          <%else%>
+            <button id='clue' type="button" class="btn btn-primary btn-sm" disabled>
+              Solicitar Pista
+            </button>
+          <%end%>
+    </div>
+  </form>
+  </center>
+</body>
+
+<%if $clue%>
+  <span class="input-group-addon" id="basic-addon1"><h5>Pista: </h5><%=$clue%></span>
+<%end%>

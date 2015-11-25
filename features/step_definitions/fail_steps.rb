@@ -24,3 +24,7 @@ When(/^I make (\d+) mistakes$/) do |error|
    click_button("play")
   end
 end
+
+Then(/^I should see the clue$/) do
+  last_response.body.should =~ /#{$clue}/m
+end

@@ -26,5 +26,37 @@ describe Game do
  it 'verifies an incorrect letter' do
    @juego.start_with("ave")
    expect(@juego.verify_letter("x")).to eq false
+   expect(@juego.trials).to eq 1
  end
+
+ it 'gets a clue for the word' do
+  @juego.start_with("ave")
+  expect(@juego.word.include?(@juego.get_clue)).to eq true
+ end
+
+ it 'after the third mistake you get one clue' do
+   @juego.start_with("ave")
+   (0..2).each{@juego.verify_letter('x')}
+   expect(@juego.available_clues).to eq 1
+ end
+
+ it 'after the forth mistake you get two clues' do
+   @juego.start_with("ave")
+   (0..3).each{@juego.verify_letter('x')}
+   expect(@juego.available_clues).to eq 2
+ end
+
+ it 'after the forth mistake you get two clues' do
+   @juego.start_with("ave")
+   (0..4).each{@juego.verify_letter('x')}
+   expect(@juego.available_clues).to eq 3
+ end
+
+ it 'when I use my clue I get 1 used clues' do
+   @juego.start_with("ave")
+   (0..2).each{@juego.verify_letter('x')}
+   @juego.get_clue
+   expect(@juego.unused_clues).to eq 0
+ end
+
 end
