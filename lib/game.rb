@@ -45,12 +45,16 @@ class Game
   end
 
   def get_clue
-    letter_pos=rand(0..(@word.size-1))
-    if @guess[letter_pos] == '_'
-      @used_clues+=1
-      return @word[letter_pos]
+    if unused_clues != 0
+      letter_pos=rand(0..(@word.size-1))
+      if @guess[letter_pos] == '_'
+        @used_clues+=1
+        return @word[letter_pos]
+      else
+        get_clue
+      end
     else
-      get_clue
+      "Pistas agotadas"
     end
   end
 end

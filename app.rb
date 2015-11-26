@@ -63,11 +63,7 @@ get '/list' do
 end
 
 get '/clue' do
-	if $juego.unused_clues != 0
-		$clue = $juego.get_clue
-	else
-		$clue='Pistas agotadas'
-	end
+	$clue = $juego.get_clue
 	erb :play
 end
 

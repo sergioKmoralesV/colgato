@@ -29,11 +29,16 @@ describe Game do
    expect(@juego.trials).to eq 1
  end
 
- it 'gets a clue for the word' do
+ it 'gets a clue for the word if I have clues available' do
   @juego.start_with("ave")
+  (0..2).each{@juego.verify_letter('x')}
   expect(@juego.word.include?(@juego.get_clue)).to eq true
  end
 
+it 'gets "Pistas agotadas" if I have no clues available' do
+  @juego.start_with("ave")
+  expect(@juego.get_clue=="Pistas agotadas").to eq true
+end
  it 'after the third mistake you get one clue' do
    @juego.start_with("ave")
    (0..2).each{@juego.verify_letter('x')}
