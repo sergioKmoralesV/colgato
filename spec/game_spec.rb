@@ -46,7 +46,7 @@ describe Game do
    expect(@juego.available_clues).to eq 2
  end
 
- it 'after the forth mistake you get two clues' do
+ it 'after the forth mistake you get three clues' do
    @juego.start_with("ave")
    (0..4).each{@juego.verify_letter('x')}
    expect(@juego.available_clues).to eq 3
