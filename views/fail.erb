@@ -3,9 +3,15 @@
 
 <h1 style='color: #9E0E3C;'> ¡Que mala suerte! </h1>
 <br>
+<h4>No adivinaste la palabra <b style='color: #9E0E3C;'><%=$juego.word.join%></b></h4>
+<br>
+<h4>Tienes <%=$juego.points%> puntos</h4>
+<br>
 <img id='perdiste' src='/images/perdiste.jpg' class='img-circle' >
 <br><br>
 <h4> ¿Quieres intentarlo de nuevo? </h4>
-
+<% if $juego.points>0 %>
+<a href="/register"><button id='end' class='btn btn-sm btn-danger' >Registrar puntaje</button></a>
+<%end%>
 <a href="/"><button id='denuevo' class='btn btn-sm btn-primary'>Jugar de Nuevo</button></a>
 </span>

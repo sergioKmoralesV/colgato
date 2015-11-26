@@ -11,7 +11,7 @@
   </h3>
   <form name="play" action="/play" method="post">
     <div class="input-group">
-        <input name="letter" type="text"><br><br>
+        <input name="letter" type="text" required><br><br>
         <input id='play' class='btn btn-sm' type="submit" value="Inténtalo!">&nbsp;
           <%if $juego.available_clues != 0%>
               <a href="/clue">

@@ -1,4 +1,7 @@
-Given /^I am at the fail page$/ do
+    
+Given (/^I am at the fail page but I have a score$/) do
+  $juego.start
+  $juego.get_points()
   visit '/fail'
 end
 

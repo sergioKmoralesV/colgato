@@ -1,10 +1,13 @@
 Feature: fail
   Scenario: I see failing page
-    Given I am at the fail page
-    Then I should see the phrase 'Que mala suerte!'
+    Given I am at the fail page but I have a score
+    Then I should see the phrase '¡Que mala suerte!'
+    Then I should see the phrase 'No adivinaste la palabra'
     And I should see an image with id 'perdiste'
     And I should see a question "¿Quieres intentarlo de nuevo?"
     And I should see one button with id 'denuevo'
+    And I should see one button with id 'end'
+
 
   Scenario: I lose the Game
     Given I am in the play page starting with word "ave"
