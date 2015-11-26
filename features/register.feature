@@ -1,6 +1,7 @@
 Feature: register
-  Scenario: I end the game and save my score
+   Scenario: I enter my name
     Given I am at the register page
     When I input "Carla" in the textarea with id "player_name"
-  	And press the button "name"
-  	Then I should see the message 'Carla'
+    And I press the button "name_button"
+    Then I should be at the show_page page with message "Carla"
+   	

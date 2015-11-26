@@ -1,7 +1,13 @@
 <span style='display:table-cell; vertical-align:middle;'>
-<h3><%=$name%></h3>
+
+	<h1>Registra tu puntaje!</h1>
+	<b style='color: #9E0E3C;'>Obtuviste <%=$juego.points%> puntos</b>
+
+<br>
+<br>
 <form name="register" action="/register" method="post">
   <input name="player_name" type="text" required>
-  <input id='name' class='btn btn-sm' type="submit" value="Registrate">
+  <input id='name_button' class='btn btn-md btn-success' type="submit" value="Registrate">
 </form>
+<img src='/images/registrate.jpg' width='250px'>
 </span>

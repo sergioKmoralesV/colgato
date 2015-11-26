@@ -29,6 +29,7 @@ post '/play' do
 		if $juego.guess.include?('_')
 			erb :play
 		else
+			$juego.get_points()
 			erb :win
 		end
 	else
@@ -39,7 +40,22 @@ end
 get '/win' do
 	erb :win
 end
+post '/register' do
+	$juego.enter_name(params[:player_name])
+	erb :show_page
+end
+get '/playagain' do
+	$juego.start
+	$letter=''
+	$clue=nil
+	$name = ''
+	erb :play
+end
 
+get '/show_page' do
+	
+	erb :show_page
+end
 get '/fail' do
 	erb :fail
 end
@@ -79,7 +95,4 @@ get '/register' do
 	erb :register
 end
 
-post '/register' do
-	$name = params[:player_name]
-	erb :register
-end
+
