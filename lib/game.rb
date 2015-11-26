@@ -59,6 +59,9 @@ class Game
   def get_last_player
     @last_player
   end
+  def points
+    @points
+  end
 
   def get_clue
     if unused_clues != 0

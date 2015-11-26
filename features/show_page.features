@@ -1,0 +1,8 @@
+Feature: show_page
+   Scenario: I see my name and points
+    Given I am at the show_page page
+    Then I should see "Carla" and "10 puntos"
+    And I should see the button with id "play_again"
+    And I press the button "play_again"
+    Then I should be at the index page with message "Bienvenido"
+

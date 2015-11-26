@@ -1,6 +1,17 @@
-<center>
-<h1>
-	
-<%= $juego.get_last_player() %>
-</h1>
-</center>
+
+
+
+
+<span style='display:table-cell; vertical-align:middle;'>
+
+	<h1><%= $juego.get_last_player() %></h1>
+	<b style='color: #9E0E3C;'>Obtuviste <%=$juego.points()%> puntos</b>
+
+<br>
+<br>
+
+<img src='/images/show.jpg' width='250px'>
+<br><br>
+          <a href="/"><button id='play' class='btn btn-md btn-success'>Jugar de nuevo</button></a><br><br>
+
+</span>
