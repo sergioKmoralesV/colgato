@@ -53,7 +53,7 @@ get '/playagain' do
 end
 
 get '/show_page' do
-	
+
 	erb :show_page
 end
 get '/fail' do
@@ -94,5 +94,6 @@ end
 get '/register' do
 	erb :register
 end
+
 
 

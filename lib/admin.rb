@@ -1,8 +1,9 @@
 class WordAdmin
-  attr_accessor :words, :exists
+  attr_accessor :words, :exists, :secret
   def initialize
     @words=Array.new
     get_words_from_file
+    @secret="colgato"
   end
 
   def get_word

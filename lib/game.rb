@@ -54,7 +54,13 @@ class Game
     @available_clues=0 if @available_clues<0
   end
   def enter_name(player_name)
-    @last_player=player_name    
+    @last_player=player_name 
+    File.open('players.txt', 'a') do |f|
+      
+        f.puts player_name
+        f.puts @points
+       
+    end  
   end
   def get_last_player
     @last_player
