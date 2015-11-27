@@ -1,7 +1,7 @@
 require './lib/admin.rb'
 
 class Game
-  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player
+  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters
   def initialize
     @last_player=""
     @guess=Array.new
@@ -15,7 +15,6 @@ class Game
   end
 
   def start
-    
     @trials=0
     admi= WordAdmin.new
     admi.get_words_from_file
@@ -23,28 +22,36 @@ class Game
     @word=Array.new
     @word= admi.get_word
     @word.each{@guess.push('_')}
+    @letters=Hash.new
+    @available_clues=0
+    @used_clues=0
   end
   def get_points
     @points+=10
-    
   end
 
   def start_with (word)
     @points=0
     @trials = 0
+    @guess=Array.new
     @word=word.split('')
     @word.each{@guess.push('_')}
+    @letters=Hash.new
+    @available_clues=0
+    @used_clues=0
   end
 
   def verify_letter(letter)
-    if @word.include?(letter)
-      (0..(@word.size-1)).each {|x| @guess[x]=letter unless @word[x]!=letter}
-      return true
-    else
-      @trials+=1
-      need_clue?
-      return false
-    end
+      if @word.include?(letter)
+        (0..(@word.size-1)).each {|x| @guess[x]=letter unless @word[x]!=letter}
+        @letters[letter]=true
+        return true
+      else
+        @trials+=1
+        need_clue?
+        @letters[letter]=false
+        return false
+      end
   end
   def unused_clues
     @available_clues - @used_clues
@@ -54,13 +61,10 @@ class Game
     @available_clues=0 if @available_clues<0
   end
   def enter_name(player_name)
-    @last_player=player_name 
+    @last_player=player_name
     File.open('players.txt', 'a') do |f|
-      
-        f.puts player_name
-        f.puts @points
-       
-    end  
+        f.puts player_name+','+@points.to_s
+    end
   end
   def get_last_player
     @last_player

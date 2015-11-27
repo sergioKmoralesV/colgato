@@ -1,2 +1,1 @@
-erika
-10
+Sergio,10
