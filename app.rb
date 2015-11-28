@@ -40,20 +40,33 @@ end
 get '/win' do
 	erb :win
 end
+get '/confirmationcreate' do
+	erb :confirmationcreate
+end
+post '/confirmationcreate' do
+	if $juego.identify(params[:secret])
+	erb :createword
+
+	else
+	erb :confirmationcreate
+		
+	end
+end
 post '/register' do
 	$juego.enter_name(params[:player_name])
 	erb :show_page
 end
+
 get '/playagain' do
 	$juego.start
 	$letter=''
 	$clue=nil
 	$name = ''
+	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>"
 	erb :play
 end
 
 get '/show_page' do
-
 	erb :show_page
 end
 get '/fail' do
@@ -94,6 +107,3 @@ end
 get '/register' do
 	erb :register
 end
-
-
-

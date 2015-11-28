@@ -32,7 +32,8 @@
       <%if $clue%>
         <div class='col-xs-6'>
           <div class="alert alert-info" role="alert" style='width:100%;'>
-              <h5>Pista: </h5><%=$clue%>
+              <h5>Pista: </h5><%=$clue%><br>
+              <i><h6>Te quedan <%=$juego.used_clues%> / <%=$juego.available_clues%> pistas</h6></i>
           </div>
         </div>
         <div class='col-xs-6' >
@@ -42,8 +43,22 @@
           <div class="alert alert-warning" role="alert" style='width:100%;'>
       <%end%>
           <h5>Letras ingresadas:</h5>
+          <table>
+            <tr>
+              <%$juego.letters.sort.each do |letter| %>
+              <td>
+                  <%if letter[1] %>
+                    <p class='text-muted'> <%=letter[0]%>&nbsp;</p>
+                  <%else%>
+                    <p class='text-muted' style='color:#FF847A;'> <%=letter[0]%>&nbsp;</p>
+                  <%end%>
+              </td>
+            <%end%>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
   </center>
 </span>
+<%=$juego.trials%>

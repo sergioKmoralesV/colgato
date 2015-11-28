@@ -64,4 +64,10 @@ end
    expect(@juego.unused_clues).to eq 0
  end
 
+ it 'saves all letters I use' do
+   @juego.start_with("ave")
+   @juego.verify_letter('x')
+   expect(@juego.letters.include?('x')).to eq true
+ end
+
 end
