@@ -33,8 +33,9 @@ end
 Then (/^I should be at the confirmationcreate page with message '(.*)'$/)  do |text2|
   last_response.body.should =~ /#{text2}/m
 end
-
-Then (/^I should be at the list page with message '(.*)'$/)  do |text3|
-  last_response.body.should =~ /#{text3}/m
+Then (/^I should be at the confirmationlist page with message '(.*)'$/)  do |text2|
+  last_response.body.should =~ /#{text2}/m
 end
+
+
 

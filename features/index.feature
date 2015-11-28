@@ -20,4 +20,5 @@ Feature: index
 Scenario: I list the words
     Given I am at the main page
     When I press the button with id 'list_words'
-    Then I should be at the list page with message 'Lista de palabras'
+    Then I should be at the confirmationlist page with message 'Palabra clave'
+    

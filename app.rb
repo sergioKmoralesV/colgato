@@ -52,6 +52,23 @@ post '/confirmationcreate' do
 		
 	end
 end
+
+get '/confirmationlist' do
+	erb :confirmationlist
+end
+post '/confirmationlist' do
+	if $juego.identify(params[:secret])
+		$admin =  WordAdmin.new
+	$admin.get_words_from_file
+	$list_words=$admin.words
+	erb :list
+
+	else
+	erb :confirmationlist
+		
+	end
+end
+
 post '/register' do
 	$juego.enter_name(params[:player_name])
 	erb :show_page
