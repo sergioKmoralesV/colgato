@@ -15,7 +15,7 @@ Feature: index
  Scenario: I create a word
     Given I am at the main page
     When I press the button with id 'create_word'
-    Then I should be at the confirmationcreate page with message 'Identificate'
+    Then I should be at the confirmationcreate page with message 'Palabra clave'
 
 Scenario: I list the words
     Given I am at the main page
