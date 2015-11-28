@@ -28,7 +28,8 @@ class Game
     @used_clues=0
   end
   def get_points
-    @points+=10
+
+    @points+=60-(@trials*10)-(@used_clues*5)
   end
 
   def start_with (word)
