@@ -40,6 +40,9 @@ end
 get '/win' do
 	erb :win
 end
+get '/best' do
+	erb :best
+end
 get '/confirmationcreate' do
 	erb :confirmationcreate
 end

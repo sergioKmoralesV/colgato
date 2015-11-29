@@ -5,6 +5,7 @@ Feature: index
     And I should see a button with id 'play'
     And I should see a button2 with id 'create_word'
     And I should see a button3 with id 'list_words'
+    And I should see a button with id 'best'
     And I should see an image with id 'logo'
 
   Scenario: I start the game
@@ -21,4 +22,9 @@ Scenario: I list the words
     Given I am at the main page
     When I press the button with id 'list_words'
     Then I should be at the confirmationlist page with message 'Palabra clave'
+
+Scenario: I list the best
+    Given I am at the main page
+    When I press the button with id 'best'
+    Then I should be at the best page with message 'Mejores puntajes'
     

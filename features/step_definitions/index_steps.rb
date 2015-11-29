@@ -36,6 +36,9 @@ end
 Then (/^I should be at the confirmationlist page with message '(.*)'$/)  do |text2|
   last_response.body.should =~ /#{text2}/m
 end
+Then (/^I should be at the best page with message '(.*)'$/)  do |text2|
+  last_response.body.should =~ /#{text2}/m
+end
 
 
 
