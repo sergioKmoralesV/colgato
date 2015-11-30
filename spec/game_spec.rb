@@ -21,6 +21,7 @@ describe Game do
  it 'verifies a correct letter' do
    @juego.start
    expect(@juego.verify(@juego.word.first)).to eq true
+   expect(@juego.guess.include?(@juego.word.first)).to eq true
  end
 
  it 'verifies an incorrect letter' do
