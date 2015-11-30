@@ -6,13 +6,15 @@
 <label id= "word">
   <h1> <%=$new_word%></h1>
 </label>
-<form name="createword" action="/createword" method="post">
-  <input name="new_letter" type="text" required>
-  <input class='btn btn-md btn-success' id = "create" type="submit" value="crear">
-
+<form id='word' name="createword" action="/createword" method="post">
+  <label> Nueva palabra: </label><br>
+  <input name="new_letter" type="text" required><br><br>
+  <label> Descripción:</label><br>
+  <input name="description" type="text" size='50px' required><br><br>
+  <input class='btn btn-md btn-success' id = "create" type="submit" value="Crear">
+  <a href="/"><button  class='btn btn-md btn-info'>Atras</button></a>
 </form>
 
-  <a href="/"><button  class='btn btn-md btn-info'>Atras</button></a>
 
 </span>
 </center>

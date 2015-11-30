@@ -1,7 +1,7 @@
 require './lib/admin.rb'
 
 class Game
-  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters , :gamers
+  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters , :gamers, :description
   def initialize
     @last_player=""
     @guess=Array.new
@@ -14,6 +14,7 @@ class Game
     @points=0
     @secret="colgato"
     @gamers=Hash.new
+    @description=''
   end
 
   def start
@@ -23,21 +24,23 @@ class Game
     @guess=Array.new
     @word=Array.new
     @word= admi.get_word
+    @description=admi.get_description_of_word(@word.join)
     @word.each{@guess.push('_')}
     @letters=Hash.new
     @available_clues=0
     @used_clues=0
   end
   def get_points
-    @points+=(60-(@trials*10)-(@used_clues*5))
+    @points+=(70-(@trials*10)-(@used_clues*5))
   end
 
-  def start_with (word)
+  def start_with (word,description)
     @points=0
     @trials = 0
     @guess=Array.new
     @word=word.split('')
     @word.each{@guess.push('_')}
+    @description=description
     @letters=Hash.new
     @available_clues=0
     @used_clues=0
@@ -129,12 +132,17 @@ class Game
 
   def get_clue
     if unused_clues != 0
-      letter_pos=rand(0..(@word.size-1))
-      if @guess[letter_pos] == '_'
+      if 3-used_clues == 1
         @used_clues+=1
-        return @word[letter_pos]
+        @description
       else
-        get_clue
+        letter_pos=rand(0..(@word.size-1))
+        if @guess[letter_pos] == '_'
+          @used_clues+=1
+          return @word[letter_pos]
+        else
+          get_clue
+        end
       end
     else
       "Pistas agotadas"

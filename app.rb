@@ -102,8 +102,9 @@ end
 
 post '/createword' do
 	$new_word = params[:new_letter]
+	$description = params[:description]
 	$admin =  WordAdmin.new
-	$new_word=$admin.new_word($new_word)
+	$new_word=$admin.new_word($new_word,$description)
 	erb :createword
 end
 

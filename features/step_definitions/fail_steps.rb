@@ -1,4 +1,3 @@
-    
 Given (/^I am at the fail page but I have a score$/) do
   $juego.start
   $juego.get_points()
@@ -30,4 +29,8 @@ end
 
 Then(/^I should see the clue$/) do
   last_response.body.should =~ /#{$clue}/m
+end
+
+Then(/^I should see the description of the word$/) do
+  last_response.body.should =~ /#{$juego.description}/m
 end

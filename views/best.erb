@@ -4,14 +4,16 @@
 <br>
 <table id='players' class='table table-striped'>
   <th>
-    <td align='center'><b>Usuario</b></td>
+    <td><b>Usuario</b></td>
     <td><b>Puntaje</b></td>
   </th>
+  <%place=1%>
 	<%$list_gammers.each do |gamer|%>
 	    <tr>
-        <td></td>
-				<td align='center'><%=gamer[0]%></td>
+        <td align='right'><%=place%>)</td>
+				<td><%=gamer[0]%></td>
   			<td><%=gamer[1]%></td>
+        <%place+=1%>
 			</tr>
 	  <%end%>
 </table>

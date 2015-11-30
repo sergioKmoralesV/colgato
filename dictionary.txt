@@ -1,12 +1,13 @@
-zapatilla
-animal
-jirafa
-produccion
-leer
-vida
-cabeza
-perro
-tiburon
-reloj
-camisa
-zapato
+produccion| Acción de producir.
+leer| ¿Qué haces tú con un libro?
+vida| Opuesto a muerte.
+perro| Tiene cuatro patas y es tu amigo fiel.
+tiburon| Hay peliculas sobre este animal.
+zapato| No puedes caminar sin él.
+zapatilla| Nos sirve para correr.
+animal| Vulgarismo de agresivo.
+jirafa| Tiene manchas y cuello largo.
+reloj| Instrumento de puntualidad.
+vino|Bebida alcohólica
+cabeza| Contenedor del cerebro.
+camisa| Prenda de vestir.

@@ -10,35 +10,45 @@ Feature: fail
 
 
   Scenario: I lose the Game
-    Given I am in the play page starting with word "ave"
+    Given I am in the play page starting with word "ave" with description "Animal que vuela"
     When I make 6 mistakes
     Then I should see the phrase 'Que mala suerte!'
 
   Scenario: I get a clue after the third trial
-    Given I am in the play page starting with word "ave"
+    Given I am in the play page starting with word "ave" with description "Animal que vuela"
     When I make 3 mistakes
     And I press the button with id 'clue'
     Then I should see the phrase 'Pista:'
     And I should see the clue
 
   Scenario: If I use my clue I get no more clues message
-    Given I am in the play page starting with word "ave"
+    Given I am in the play page starting with word "ave" with description "Animal que vuela"
     When I make 3 mistakes
     And I press the button with id 'clue'
     And I press the button with id 'clue'
     Then I should see the phrase 'Pistas agotadas'
 
     Scenario: I get two clues after the forth trial
-      Given I am in the play page starting with word "ave"
+      Given I am in the play page starting with word "ave" with description "Animal que vuela"
       When I make 4 mistakes
       And I press the button with id 'clue'
       And I press the button with id 'clue'
       Then I should see the clue
 
+
     Scenario: I get three clues after the fifth trial
-      Given I am in the play page starting with word "ave"
+      Given I am in the play page starting with word "ave" with description "Animal que vuela"
       When I make 5 mistakes
       And I press the button with id 'clue'
       And I press the button with id 'clue'
       And I press the button with id 'clue'
       Then I should see the clue
+
+
+    Scenario: I get the description of the word when I use two of three clues
+        Given I am in the play page starting with word "ave" with description "Animal que vuela"
+        When I make 5 mistakes
+        And I press the button with id 'clue'
+        And I press the button with id 'clue'
+        And I press the button with id 'clue'
+        Then I should see the description of the word

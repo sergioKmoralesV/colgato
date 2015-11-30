@@ -3,8 +3,8 @@ Given(/^I am in the play page$/) do
   visit '/play'
 end
 
-Given(/^I am in the play page starting with word "([^"]*)"$/) do |palabra|
-  $juego.start_with(palabra)
+Given(/^I am in the play page starting with word "([^"]*)" with description "([^"]*)"$/) do |palabra,description|
+  $juego.start_with(palabra,description)
   visit '/play'
 end
 
