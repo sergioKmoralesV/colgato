@@ -30,11 +30,15 @@ Then(/^I should see an image with id '(.*?)'$/) do |img|
   last_response.should have_xpath("//img[@id=\"#{img}\"]")
 end
 
-Then (/^I should be at the createword page with message '(.*)'$/)  do |text2|
+Then (/^I should be at the confirmationcreate page with message '(.*)'$/)  do |text2|
+  last_response.body.should =~ /#{text2}/m
+end
+Then (/^I should be at the confirmationlist page with message '(.*)'$/)  do |text2|
+  last_response.body.should =~ /#{text2}/m
+end
+Then (/^I should be at the best page with message '(.*)'$/)  do |text2|
   last_response.body.should =~ /#{text2}/m
 end
 
-Then (/^I should be at the list page with message '(.*)'$/)  do |text3|
-  last_response.body.should =~ /#{text3}/m
-end
+
 

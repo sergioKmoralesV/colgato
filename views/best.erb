@@ -1,0 +1,21 @@
+<span style=' display:table-cell;  vertical-align:middle;'>
+<center>
+  <h1>Mejores puntajes</h1>
+<br>
+<table id='players' class='table table-striped'>
+  <th>
+    <td align='center'><b>Usuario</b></td>
+    <td><b>Puntaje</b></td>
+  </th>
+	<%$list_gammers.each do |gamer|%>
+	    <tr>
+        <td></td>
+				<td align='center'><%=gamer[0]%></td>
+  			<td><%=gamer[1]%></td>
+			</tr>
+	  <%end%>
+</table>
+<a href="/"><button  class='btn btn-md btn-info'>Atras</button></a>
+
+</span>
+</center>

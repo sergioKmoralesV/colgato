@@ -19,6 +19,7 @@ class WordAdmin
   	end
   	f.close
   end
+  
 
   def new_word(word)
     @resp=''

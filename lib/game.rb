@@ -1,7 +1,7 @@
 require './lib/admin.rb'
 
 class Game
-  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters
+  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters , :gamers
   def initialize
     @last_player=""
     @guess=Array.new
@@ -12,6 +12,8 @@ class Game
     @used_clues=0
     @letters=Hash.new
     @points=0
+    @secret="colgato"
+    @gamers=Hash.new
   end
 
   def start
@@ -27,7 +29,7 @@ class Game
     @used_clues=0
   end
   def get_points
-    @points+=10
+    @points+=(60-(@trials*10)-(@used_clues*5))
   end
 
   def start_with (word)
@@ -41,6 +43,24 @@ class Game
     @used_clues=0
   end
 
+  def verify_word(word)
+    if @word.join==word
+      @guess=@word
+      return true
+    else
+      @trials+=1
+      need_clue?
+      return false
+    end
+  end
+
+  def verify(entrance)
+    if entrance.size>1
+      verify_word(entrance)
+    else
+      verify_letter(entrance)
+    end
+  end
   def verify_letter(letter)
       if @word.include?(letter)
         (0..(@word.size-1)).each {|x| @guess[x]=letter unless @word[x]!=letter}
@@ -63,11 +83,45 @@ class Game
   def enter_name(player_name)
     @last_player=player_name
     File.open('players.txt', 'a') do |f|
-        f.puts player_name+','+@points.to_s
+        f.puts player_name+'|'+@points.to_s
     end
   end
   def get_last_player
     @last_player
+  end
+  def get_gamers
+    @gamers=Hash.new
+    f = File.open("players.txt", "r")
+    f.each_line do |line|
+      pair= (line.gsub(/\n/,'')).split('|')
+      if ! @gamers[pair[1]]
+        @gamers[pair[1]]=[]
+      end
+      @gamers[pair[1]].push(pair[0])
+    end
+    f.close
+  end
+  def get_best_scores_from_gamers
+    @gamers=@gamers.sort.reverse
+    quant_to_show=0
+    indice=0
+    result = []
+    while(quant_to_show<=10 && indice!=@gamers.size)
+      @gamers[indice][1].each do |player|
+        break if quant_to_show==10
+        result.push([player,@gamers[indice][0]])
+        quant_to_show+=1
+      end
+      indice+=1
+    end
+    @gamers=result
+  end
+  def identify(word)
+    if word==@secret
+      true
+    else
+      false
+    end
   end
   def points
     @points

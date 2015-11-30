@@ -22,8 +22,8 @@ get '/play' do
 end
 
 post '/play' do
-	$letter = params[:letter]
-	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify_letter($letter)
+	$letter = params[:letter].downcase
+	$image="<img id='logo' src='/images/intento"+$juego.trials.to_s+".png'>" unless $juego.verify($letter)
 	$clue = nil
 	if $juego.trials<6
 		if $juego.guess.include?('_')
@@ -40,6 +40,41 @@ end
 get '/win' do
 	erb :win
 end
+get '/best' do
+	$juego.get_gamers
+	$juego.get_best_scores_from_gamers
+	$list_gammers=$juego.gamers
+	erb :best
+end
+get '/confirmationcreate' do
+	erb :confirmationcreate
+end
+post '/confirmationcreate' do
+	if $juego.identify(params[:secret])
+	erb :createword
+
+	else
+	erb :confirmationcreate
+
+	end
+end
+
+get '/confirmationlist' do
+	erb :confirmationlist
+end
+post '/confirmationlist' do
+	if $juego.identify(params[:secret])
+		$admin =  WordAdmin.new
+	$admin.get_words_from_file
+	$list_words=$admin.words
+	erb :list
+
+	else
+	erb :confirmationlist
+
+	end
+end
+
 post '/register' do
 	$juego.enter_name(params[:player_name])
 	erb :show_page
