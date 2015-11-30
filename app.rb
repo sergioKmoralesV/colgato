@@ -41,6 +41,9 @@ get '/win' do
 	erb :win
 end
 get '/best' do
+	
+	$juego.get_gamers()
+	$list_gammers=$juego.gamers
 	erb :best
 end
 get '/confirmationcreate' do

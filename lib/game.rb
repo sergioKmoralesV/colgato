@@ -1,7 +1,7 @@
 require './lib/admin.rb'
 
 class Game
-  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters
+  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters , :gamers
   def initialize
     @last_player=""
     @guess=Array.new
@@ -13,6 +13,7 @@ class Game
     @letters=Hash.new
     @points=0
     @secret="colgato"
+    @gamers=Array.new    
   end
 
   def start
@@ -70,6 +71,15 @@ class Game
   end
   def get_last_player
     @last_player
+  end
+  def get_gamers    
+    @gamers=Array.new
+    f = File.open("players.txt", "r")
+    f.each_line do |line|
+      @gamers.push(line.gsub(/\n/,''))
+      
+    end
+    f.close
   end
   def identify(word)
     if word==@secret
