@@ -1,4 +1,3 @@
-zapato
 zapatilla
 animal
 jirafa
@@ -10,3 +9,4 @@ perro
 tiburon
 reloj
 camisa
+zapato
