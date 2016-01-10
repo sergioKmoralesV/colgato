@@ -1,7 +1,7 @@
 require './lib/admin.rb'
 
 class Game
-  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters , :gamers, :description
+  attr_accessor :guess, :word, :trials, :words, :exists, :available_clues, :used_clues, :points, :last_player, :letters , :gamers, :description , :used_words
   def initialize
     @last_player=""
     @guess=Array.new
@@ -15,6 +15,8 @@ class Game
     @secret="colgato"
     @gamers=Hash.new
     @description=''
+    @used_words = Array.new
+
   end
 
   def start
@@ -29,6 +31,7 @@ class Game
     @letters=Hash.new
     @available_clues=0
     @used_clues=0
+    @used_words=Array.new
   end
   def get_points
     @points+=(70-(@trials*10)-(@used_clues*5))
@@ -44,6 +47,7 @@ class Game
     @letters=Hash.new
     @available_clues=0
     @used_clues=0
+    @used_words=Array.new
   end
 
   def verify_word(word)

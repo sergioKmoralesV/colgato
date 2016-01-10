@@ -3,6 +3,9 @@
 
 <h1 style='color: #094F84;'> ¡Felicidades! </h1>
 <h4>Adivinaste la palabra <b style='color: #9E0E3C;'><%=$juego.word.join%></b></h4>
+<% $juego.used_words.each do |word|%>
+  <%=word%>
+  <%end%>
 <br>
 <h4>Tienes <%=$juego.points%> puntos</h4>
 <img id='ganaste' src='/images/ganaste.jpg' class='img-circle' width="200px">

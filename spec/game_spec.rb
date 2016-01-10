@@ -9,6 +9,7 @@ describe Game do
    @juego.start
    expect(@juego.trials).to eq 0
    expect(@juego.guess.include?(/\W/)).to eq false
+   expect(@juego.used_words.include?(/\W/)).to eq false
  end
 
  it 'game starts with an specific word' do
@@ -16,7 +17,9 @@ describe Game do
    expect(@juego.trials).to eq 0
    expect(@juego.word.join).to eq "ave"
    expect(@juego.guess.include?(/\W/)).to eq false
+
  end
+
 
  it 'verifies a correct letter' do
    @juego.start
@@ -79,8 +82,10 @@ end
 
  it 'wins when I guessed the complete correct word' do
    @juego.start_with("ave","Animal que vuela")
+   @juego.used_words.push("ave")
    expect(@juego.verify('ave')).to eq true
    expect(@juego.guess.include?('_')).to eq false
+   
  end
 
  it 'if I use two of three clues, the third is description clue' do

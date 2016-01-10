@@ -12,6 +12,7 @@ get '/' do
 	$letter=''
 	$clue=nil
 	$name = ''
+	$used_words=Array.new
   erb :index
 end
 
@@ -38,6 +39,7 @@ post '/play' do
 end
 
 get '/win' do
+	$used_words.push($juego.word)
 	erb :win
 end
 get '/best' do
